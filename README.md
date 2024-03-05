@@ -15,9 +15,9 @@ Descrição:
 
 Requisitos:
 
-    Permissões: Administrator, Responsável, Funcionário, Espectador
+ Permissões: Administrator, Responsável, Funcionário, Espectador
 
-    Administrador:
+ Administrador:
 
         Eu como administrador posso visualizar e interagir com o feed geral 
 
@@ -37,7 +37,7 @@ Requisitos:
 
         Eu como administrador posso vizualizar e interagir com os grupos a qual participo conforme as opções de preferencias
 
-    Responsável:
+ Responsável:
         
         Eu como responsável posso visualizar o feed geral
 
@@ -51,7 +51,7 @@ Requisitos:
 
         Eu como responsável posso vizualizar e interagir com os grupos a qual participo conforme as opções de preferencias
 
-    Funcionário:
+ Funcionário:
 
         Eu como funcionário posso visualizar o feed geral
 
@@ -59,7 +59,7 @@ Requisitos:
 
         Eu como funcioário posso vizualizar e interagir com os grupos a qual participo conforme as opções de preferencias
 
-    Espectador:
+ Espectador:
 
         Eu como espectador posso visualizar o feed geral
 
@@ -73,17 +73,11 @@ Hierarquia: define os niveis de prioridades do usuário, utilizado em conjunto c
 
 Opções de preferencias:
 
-    Tempo de atraso entre postagens
-
-    Tipo de mensagem permitidas(Texto, Foto, Vídeo...)
-
-    Usuários que podem criar e/ou remover postagens
-
-    Tamano maximo de mensagem(caracteres/tamanho)
-
-    Nível de importancia das postagens
-
-    Permitir mensionar usuários
-
-    permitir postagens temporárias
+ - Tempo de atraso entre postagens
+ - Tipo de mensagem permitidas(Texto, Foto, Vídeo...)
+ - Usuários que podem criar e/ou remover postagens
+ - Tamano maximo de mensagem(caracteres/tamanho)
+ - Nível de importancia das postagens
+ -  Permitir mensionar usuários
+ -  permitir postagens temporárias
 
