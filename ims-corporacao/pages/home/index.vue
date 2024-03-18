@@ -1,5 +1,7 @@
 <template>
-    <p>opa</p>
+    <UCard>
+        <span>Descubra a Verdadeira Natureza da sua Empresa</span>
+    </UCard>
 </template>
 <script setup lang="ts">
 

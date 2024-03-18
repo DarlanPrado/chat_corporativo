@@ -11,7 +11,9 @@
           </div>
         </template>
 
-        <Placeholder class="h-32" />
+        <div class="h-28 w-full flex justify-center items-center border-dashed border-2 dark:border-gray-700">
+          <span>Recurso em desenvolvimento</span>
+        </div>
       </UCard>
     </UModal>
   </NuxtErrorBoundary>
@@ -28,7 +30,9 @@
           </div>
         </template>
 
-        <Placeholder class="h-full" />
+        <div class="h-full w-full flex justify-center items-center border-dashed border-2 dark:border-gray-700">
+          <span>Recurso em desenvolvimento</span>
+        </div>
       </UCard>
     </USlideover>
   </NuxtErrorBoundary>
@@ -52,9 +56,9 @@
           </UTooltip>
         </div>
       </div>
-      <div>
+      <UContainer class="flex justify-center py-16">
         <slot />
-      </div>
+      </UContainer>
     </div>
     <div class="flex justify-between w-full h-36 bg-gray-300 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
 
