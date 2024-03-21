@@ -11,6 +11,6 @@ export default defineNuxtConfig({
   runtimeConfig: {
     mongotoken: ''
   },
-  modules: ['@nuxt/ui', "@nuxt/image"],
+  modules: ['@nuxt/ui', '@nuxt/image', 'nuxt-mongoose'],
   // '@pinia/nuxt'
 })
