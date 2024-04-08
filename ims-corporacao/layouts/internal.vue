@@ -30,9 +30,10 @@
           </div>
         </template>
 
-        <div class="h-full w-full flex justify-center items-center border-dashed border-2 dark:border-gray-700">
+        <!-- <div class="h-full w-full flex justify-center items-center border-dashed border-2 dark:border-gray-700">
           <span>Recurso em desenvolvimento</span>
-        </div>
+        </div> -->
+        <GlobalNavbar />
       </UCard>
     </USlideover>
   </NuxtErrorBoundary>
@@ -56,7 +57,7 @@
           </UTooltip>
         </div>
       </div>
-      <UContainer class="flex justify-center py-16">
+      <UContainer class="flex justify-center flex-col py-16">
         <slot />
       </UContainer>
     </div>
