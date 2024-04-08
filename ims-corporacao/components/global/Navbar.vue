@@ -1,7 +1,8 @@
 <template>
-    <UVerticalNavigation :links="links" />
+    <UVerticalNavigation :links="links" @click="showNavbar = false"/>
 </template>
 <script setup lang="ts">
+const showNavbar = defineModel()
 
 const links = [{
   label: 'Home',
@@ -12,9 +13,9 @@ const links = [{
   icon: 'i-heroicons-user-group',
   to: '/home/usuarios'
 },{
-  label: 'Conversa',
+  label: 'Feed',
   icon: 'i-heroicons-chat-bubble-bottom-center-text-solid',
-  to: '/home/conversa'
+  to: '/home/feed'
 }]
 
 </script>

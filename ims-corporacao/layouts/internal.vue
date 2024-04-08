@@ -33,7 +33,7 @@
         <!-- <div class="h-full w-full flex justify-center items-center border-dashed border-2 dark:border-gray-700">
           <span>Recurso em desenvolvimento</span>
         </div> -->
-        <GlobalNavbar />
+        <GlobalNavbar v-model="showMenu" />
       </UCard>
     </USlideover>
   </NuxtErrorBoundary>
@@ -57,7 +57,7 @@
           </UTooltip>
         </div>
       </div>
-      <UContainer class="flex justify-center flex-col py-16">
+      <UContainer class="flex flex-col py-16 page">
         <slot />
       </UContainer>
     </div>
@@ -99,3 +99,10 @@ const isDark = computed({
   }
 })
 </script>
+<style>
+
+.page{
+  height: calc(100vh - 80px);
+}
+
+</style>
