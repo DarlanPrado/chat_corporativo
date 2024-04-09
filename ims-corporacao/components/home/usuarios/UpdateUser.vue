@@ -9,7 +9,7 @@
             </template>
 
             <div>
-                <UForm ref="form" :schema="schemaCreateUser" :state="stateCreateuser" @submit="criarUsuario" >
+                <UForm ref="form" :schema="schemaCreateUser" :state="stateCreateuser" @submit="salvarUsuario" >
                     <div class="mb-5 flex flex-col gap-2">
                         <UFormGroup label="Nome" name="nome">
                             <UInput v-model="stateCreateuser.nome" placeholder="Nome do Usuario" />
@@ -25,7 +25,7 @@
                         </UFormGroup>
                     </div>
                     <div>
-                        <UButton type="submit" label="Adicionar" size="md" block/>
+                        <UButton type="submit" label="Salvar" size="md" block/>
                     </div>
                 </UForm>
             </div>
@@ -36,8 +36,15 @@
 import type { InferType } from 'yup';
 import type { FormSubmitEvent } from '#ui/types'
 import { useUsuarioStore } from '~/stores/Usuarios';
+import type{ Usuario } from '~/stores/Usuarios'
 const { $yup, $notification } = useNuxtApp()
 const showModal = defineModel()
+
+interface Props {
+  user: Usuario
+}
+
+const props = defineProps<Props>()
 
 const schemaCreateUser = $yup.object({
     nome: $yup.string().lowercase().trim().required(),
@@ -46,14 +53,13 @@ const schemaCreateUser = $yup.object({
     status: $yup.boolean().required()
 })
 
-
 type schemaCreateUser = InferType<typeof schemaCreateUser>
 
 const stateCreateuser = reactive({
-    nome: undefined,
-    email: undefined,
-    permissao: undefined,
-    status: true,
+    nome: props.user.nome,
+    email: props.user.email,
+    permissao: props.user.permissao,
+    status: props.user.blAtivo,
 })
 
 const optionsStatus = [{
@@ -64,7 +70,7 @@ const optionsStatus = [{
     value: false
 }]
 
-const criarUsuario = (event: FormSubmitEvent<schemaCreateUser>) => {
+const salvarUsuario = (event: FormSubmitEvent<schemaCreateUser>) => {
     showModal.value = false
     $notification.info("Este recurso está em desenvolvimento")
 }

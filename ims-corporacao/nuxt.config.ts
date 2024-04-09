@@ -8,14 +8,16 @@ export default defineNuxtConfig({
       }
     }
   },
-  modules: ['@nuxt/ui', '@nuxt/image', 'nuxt-mongoose'],
+  modules: ['@nuxt/ui', '@nuxt/image', 'nuxt-mongoose','@pinia/nuxt'],
   mongoose: {
     uri: process.env.MONGODB_URI,
     modelsDir: 'models',
     devtools: true,
   },
-  // '@pinia/nuxt'
   components: [{
     path: '~/components'
-  }]
+  }],
+  pinia: {
+    storesDirs: ['~/stores/**']
+  }
 })

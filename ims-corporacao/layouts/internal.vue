@@ -57,7 +57,7 @@
           </UTooltip>
         </div>
       </div>
-      <UContainer class="flex flex-col py-16 page">
+      <UContainer class="flex flex-col py-5 page">
         <slot />
       </UContainer>
     </div>
