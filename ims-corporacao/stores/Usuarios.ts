@@ -1,3 +1,9 @@
+interface Servico{
+    id: number,
+    nome: string,
+    descricao: string,
+}
+
 interface Permissao{
     name: string,
     value: string,
@@ -8,6 +14,7 @@ export interface Usuario{
     email: string,
     nome: string,
     permissao: string,
+    servicos: Array<number | undefined>,
     dataLogin?: Date,
     blFirstLogin: boolean,
     blAtivo: boolean,
@@ -28,6 +35,7 @@ interface UsuarioFromTable{
 interface State{
     usuarios: Array<Usuario>
     permissoes: Array<Permissao>
+    servico: Array<Servico>
 }
 
 export const useUsuarioStore = defineStore('usuarios', {
@@ -35,6 +43,7 @@ export const useUsuarioStore = defineStore('usuarios', {
         return {
             usuarios: [],
             permissoes: [],
+            servico: [],
         }
     },
     actions: {
@@ -43,6 +52,9 @@ export const useUsuarioStore = defineStore('usuarios', {
         },
         definePerms(perms: Array<Permissao>){
             this.permissoes = perms
+        },
+        defineServicos(servicos: Array<Servico>){
+            this.servico = servicos
         }
     },
     getters: {
@@ -69,9 +81,11 @@ export const useUsuarioStore = defineStore('usuarios', {
                 return state.usuarios.find(usuario => usuario.id == idUsuario)
             }
         },
-
         getPerms(state: State){
             return state.permissoes
+        },
+        getServices(state: State){
+            return state.servico
         }
     }
 })

@@ -66,6 +66,7 @@ useHead({
 onMounted(() => {
     findUser()
     findPerms()
+    findServices()
 })
 
 const controlTableUserActionsEnableOrDisable = (row: any) => {
@@ -151,6 +152,7 @@ const findUser = () => {
             email: "example1@mail.com",
             nome: "example 1",
             permissao: 'administrador',
+            servicos: [1],
             dataLogin: new Date(),
             blFirstLogin: false,
             blAtivo: false,
@@ -162,6 +164,7 @@ const findUser = () => {
             email: "example2@mail.com",
             nome: "example 2",
             permissao: 'administrador',
+            servicos: [1],
             dataLogin: new Date(),
             blFirstLogin: true,
             blAtivo: false,
@@ -173,6 +176,7 @@ const findUser = () => {
             email: "example3@mail.com",
             nome: "example 3",
             permissao: 'administrador',
+            servicos: [],
             dataLogin: new Date(),
             blFirstLogin: false,
             blAtivo: true,
@@ -184,6 +188,7 @@ const findUser = () => {
             email: "example4@mail.com",
             nome: "example 4",
             permissao: 'administrador',
+            servicos: [],
             dataLogin: new Date(),
             blFirstLogin: false,
             blAtivo: true,
@@ -195,6 +200,7 @@ const findUser = () => {
             email: "example5@mail.com",
             nome: "example 5",
             permissao: 'administrador',
+            servicos: [],
             dataLogin: new Date(),
             blFirstLogin: false,
             blAtivo: false,
@@ -206,6 +212,7 @@ const findUser = () => {
             email: "example6@mail.com",
             nome: "example 6",
             permissao: 'administrador',
+            servicos: [],
             dataLogin: new Date(),
             blFirstLogin: false,
             blAtivo: false,
@@ -217,6 +224,7 @@ const findUser = () => {
             email: "example7@mail.com",
             nome: "example 7",
             permissao: 'administrador',
+            servicos: [],
             dataLogin: new Date(),
             blFirstLogin: false,
             blAtivo: false,
@@ -228,6 +236,7 @@ const findUser = () => {
             email: "example8@mail.com",
             nome: "example 8",
             permissao: 'administrador',
+            servicos: [],
             dataLogin: new Date(),
             blFirstLogin: false,
             blAtivo: false,
@@ -239,6 +248,7 @@ const findUser = () => {
             email: "example9@mail.com",
             nome: "example 9",
             permissao: 'administrador',
+            servicos: [],
             dataLogin: new Date(),
             blFirstLogin: false,
             blAtivo: false,
@@ -250,6 +260,7 @@ const findUser = () => {
             email: "example10@mail.com",
             nome: "example 10",
             permissao: 'administrador',
+            servicos: [],
             dataLogin: new Date(),
             blFirstLogin: false,
             blAtivo: false,
@@ -261,6 +272,7 @@ const findUser = () => {
             email: "example11@mail.com",
             nome: "example 11",
             permissao: 'administrador',
+            servicos: [],
             dataLogin: new Date(),
             blFirstLogin: false,
             blAtivo: false,
@@ -272,6 +284,7 @@ const findUser = () => {
             email: "example12@mail.com",
             nome: "example 12",
             permissao: 'administrador',
+            servicos: [],
             dataLogin: new Date(),
             blFirstLogin: false,
             blAtivo: false,
@@ -283,6 +296,7 @@ const findUser = () => {
             email: "example13@mail.com",
             nome: "example 13",
             permissao: 'administrador',
+            servicos: [],
             dataLogin: new Date(),
             blFirstLogin: false,
             blAtivo: false,
@@ -294,6 +308,7 @@ const findUser = () => {
             email: "example14@mail.com",
             nome: "example 14",
             permissao: 'administrador',
+            servicos: [],
             dataLogin: new Date(),
             blFirstLogin: false,
             blAtivo: false,
@@ -316,6 +331,15 @@ const findPerms = () => {
     },{
         name: 'Espectador',
         value: 'espectador'
+    }])
+}
+
+
+const findServices = () =>{
+    useUsuarioStore().defineServicos([{
+        id: 1,
+        nome: "feed",
+        descricao: "Ferramenta de conversação entre as equipes",
     }])
 }
 
