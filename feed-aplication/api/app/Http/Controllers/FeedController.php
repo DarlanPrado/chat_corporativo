@@ -38,6 +38,46 @@ class FeedController extends Controller {
         }
     }
 
+    public function createFeed(Request $request){
+        $request->validate([
+            "name"                  => "string|required",
+            "icon"                  => "string",
+            "timestamp_post"        => "number",
+            "min_perm_from_post"    => "number",
+            "max_char"              => "number",
+            "allow_mention"         => "boolean",
+            "allow_temporary_posts" => "boolean"
+        ]);
+
+        $newFeed = [
+            "name" => $request->name
+        ];
+
+        if($request->filled('icon')){
+            $newFeed["icon"] = $request->icon;
+        }
+        if($request->filled('timestamp_post')){
+            $newFeed["timestamp_post"] = $request->timestamp_post;
+        }
+        if($request->filled('min_perm_from_post')){
+            $newFeed["min_perm_from_post"] = $request->min_perm_from_post;
+        }
+        if($request->filled('allow_mentions')){
+            $newFeed["allow_mentions"] = $request->allow_mentions;
+        }
+        if($request->filled('allow_temporary_posts')){
+            $newFeed["allow_temporary_posts"] = $request->allow_temporary_posts;
+        }
+
+        $feed = Feed::create($newFeed);
+
+        return response()->json([
+            "code" => "201",
+            "status" => "Created",
+            "message" => "sucesso ao criar o feed",
+            "data"=> $feed,
+        ], 201);
+    }
     
     public function updateFeed(Request $request){
         $request->validate([
@@ -62,31 +102,31 @@ class FeedController extends Controller {
             ], 404);
         }
 
-        if ($request->has('name')) {
+        if ($request->filled('name')) {
             $feed->user = $request->name;
         }
 
-        if ($request->has('icon')) {
+        if ($request->filled('icon')) {
             $feed->icon = $request->icon;
         }
 
-        if ($request->has('timestamp_post')) {
+        if ($request->filled('timestamp_post')) {
             $feed->timestamp_post = $request->timestamp_post;
         }
 
-        if ($request->has('min_perm_from_post')) {
+        if ($request->filled('min_perm_from_post')) {
             $feed->min_perm_from_post = $request->min_perm_from_post;
         }
 
-        if ($request->has('max_char')) {
+        if ($request->filled('max_char')) {
             $feed->max_char = $request->max_char;
         }
 
-        if ($request->has('allow_mention')) {
+        if ($request->filled('allow_mention')) {
             $feed->allow_mention = $request->allow_mention;
         }
 
-        if ($request->has('allow_temporary_posts')) {
+        if ($request->filled('allow_temporary_posts')) {
             $feed->allow_temporary_posts = $request->allow_temporary_posts;
         }
 
