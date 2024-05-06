@@ -15,6 +15,7 @@ services:
     environment:
       POSTGRES_USER: postgre
       POSTGRES_DB: feed_database
+      POSTGRES_PASSWORD: Isdof903wu489y7dfn1qi134bikbui34
     volumes:
       - ./data:/var/lib/postgresql/data
       - ./database.postgre.sql:/docker-entrypoint-initdb.d/database.postgre.sql
