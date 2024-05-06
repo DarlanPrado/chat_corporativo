@@ -79,5 +79,5 @@ Opções de preferencias:
  - Tamano maximo de mensagem(caracteres/tamanho)
  - Nível de importancia das postagens
  -  Permitir mensionar usuários
- -  permitir postagens temporárias
+ - Postagens temporárias
 

@@ -1,0 +1,22 @@
+services:
+
+  # crdb:
+  #   image: cockroachdb/cockroach:v19.2.2
+  #   ports:
+  #     - "26257:26257"
+  #     - "8080:8080"
+  #   command: start-single-node --insecure
+  #   volumes:
+  #     - "${PWD}/cockroach-data/crdb:/cockroach/cockroach-data"
+
+  postgredb:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgre
+      POSTGRES_DB: feed_database
+    volumes:
+      - ./data:/var/lib/postgresql/data
+      - ./database.postgre.sql:/docker-entrypoint-initdb.d/database.postgre.sql
+    ports:
+      - "5433:5432"
