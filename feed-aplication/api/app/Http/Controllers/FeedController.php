@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Feed;
+use App\Models\User;
+use Illuminate\Http\Request;
 
 class FeedController extends Controller {
 
@@ -78,7 +80,7 @@ class FeedController extends Controller {
             "data"=> $feed,
         ], 201);
     }
-    
+
     public function updateFeed(Request $request){
         $request->validate([
             "id" => "required|string",

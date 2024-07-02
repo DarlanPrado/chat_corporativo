@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use Illuminate\Http\Request;
 
 class userController extends Controller {
     public function getListUser(){
@@ -19,8 +20,8 @@ class userController extends Controller {
             'id' => 'required|string'
         ]);
 
-        $usuario = User::select('user','name','email','status').where('id', $request->id);
-        if($usuario->isEmpty()){
+        $usuario = User::select('user','name','email','status')->where('id', $request->id);
+        if(!$usuario){
             return response()->json([
                 "code" => "404",
                 "status" => "Not Found",
